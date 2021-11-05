@@ -42,6 +42,13 @@ logInForm.addEventListener('submit', (e) => {
         login: inputLogin.value,
         password: inputPassword.value
     }
+    
+    if (!user.login) {
+        //Коментарий в случае если нужно закрывать модальное окно
+        // modalAuth.style.display = 'none'
+        alert("You forgot to enter login! Try one more time")
+        return
+    }
 
     localStorage.setItem('user', JSON.stringify(user))
     
