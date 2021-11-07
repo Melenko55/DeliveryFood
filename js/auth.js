@@ -39,7 +39,7 @@ closeAuth.addEventListener('click', () => {
 logInForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const user = {
-        login: inputLogin.value,
+        login: inputLogin.value.trim(),
         password: inputPassword.value
     }
     
@@ -51,7 +51,6 @@ logInForm.addEventListener('submit', (e) => {
     }
 
     localStorage.setItem('user', JSON.stringify(user))
-    
     logIn(user)
     
 });
@@ -63,3 +62,4 @@ buttonOut.addEventListener('click', () => {
 if (localStorage.getItem('user')) {
     logIn(JSON.parse(localStorage.getItem('user')))
 }
+
